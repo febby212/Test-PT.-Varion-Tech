@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('satuan_barangs', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->primary()->unique();
+            $table->string('kode')->unique();
+            $table->string('nama');
             $table->timestamps();
         });
     }
